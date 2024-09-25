@@ -1,0 +1,125 @@
+.nav {
+    padding: 28px 0;
+    background: var(--black);
+}
+
+.nav__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav__logo {
+    display: flex;
+    align-items: flex-end;
+    gap: 6px;
+}
+
+.nav__logo span {
+    color: var(--white);
+    font-family: var(--com);
+    font-weight: 700;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+.nav__list {
+    display: flex;
+    gap: 26px;
+}
+
+.nav__list-link {
+    color: var(--white);
+    font-size: 14px;
+    font-family: var(--mon);
+    transition: .5s;
+    position: relative;
+}
+
+.nav__list-link:hover {
+    color: var(--orangeColor);
+}
+
+.nav__list-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: var(--orangeColor);
+    left: 0;
+    bottom: -40px;
+    border-radius: 23px;
+    transition: .5s;
+}
+
+.nav__list-link:hover.nav__list-link::after {
+    width: 100%;
+}
+
+
+@media (max-width:768px) {
+    .nav {
+        position: relative;
+    }
+
+    .nav__list {
+        position: absolute;
+        right: 0;
+        top: 100%;
+        flex-direction: column;
+        background: var(--black);
+        padding: 16px;
+        align-items: center;
+        transform: scaleY(0);
+        transform-origin: top;
+        transition: .5s;
+    }
+
+    .nav__list-link::after {
+        display: none;
+    }
+
+    .nav__menu-btn {
+        display: block;
+    }
+    .menu__icon{
+        display: block !important;
+        
+    }
+}
+@media (max-width: 576px) {
+    .nav__logo span{
+        font-size: 16px;
+    }
+    .nav__logo img{
+        width: 76px;
+    }
+    
+}
+
+.menu__icon {
+    width: 30px;
+    height: 30px;
+    background: var(--white);
+    display: none;
+}
+
+.menu-toggle {
+    display: none;
+}
+
+
+.menu-toggle:checked+.menu__icon+.nav+.nav__list{
+    transform: scaleY(1);
+}
+
+.menu__icon {
+    position: absolute;
+    z-index: 2;
+    top: 34px;
+    right: 15px;
+}
+
+.nav__list.active {
+    transform: scaleY(1);
+}

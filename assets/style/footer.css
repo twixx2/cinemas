@@ -1,0 +1,26 @@
+.footer{
+    box-shadow: 0px 0px 20px 0px 
+    rgba(0, 0, 0, 0.8);
+    background: linear-gradient(90.00deg,
+     rgb(255, 140, 48),
+    rgb(159, 71, 0) 100%);
+    margin-top: 64px;
+    padding: 24px 0;
+}
+.footer__apps{
+    display: flex;
+    gap: 50px;
+    align-items: center;
+    max-width: 264px;
+}
+.footer__span{
+    color: var(--white);
+    font-family: var(--com);
+    font-weight: 700;
+    font-size: 18px;
+}
+.footer__content{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
